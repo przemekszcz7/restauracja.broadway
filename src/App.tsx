@@ -37,7 +37,6 @@ export default function App() {
   ];
 
   const reels = [
-    "https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1782753596434912%2F&show_text=false&width=267&t=0",
     "https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F2997419573784793%2F&show_text=false&width=267&t=0",
     "https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1547301043612039%2F&show_text=false&width=267&t=0"
   ];
@@ -301,7 +300,7 @@ export default function App() {
             <p className="text-white/40 font-display text-[10px] uppercase tracking-[0.3em]">Odkryj naszą atmosferę na mediach społecznościowych</p>
           </motion.div>
           
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mb-20">
+          <div className="grid gap-8 sm:grid-cols-2 max-w-4xl mx-auto mb-20">
             {reels.map((url, idx) => (
               <motion.div
                 key={idx}
