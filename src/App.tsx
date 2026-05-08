@@ -422,10 +422,7 @@ export default function App() {
               <p className="text-xs text-white/30 tracking-widest font-display uppercase">Restauracja & Lounge</p>
             </div>
             
-            <div className="flex gap-8">
-              <a href="#" className="nav-link !text-[10px]">Polityka Prywatności</a>
-              <a href="#" className="nav-link !text-[10px]">Regulamin</a>
-            </div>
+
 
             <p className="text-[10px] text-white/20 font-display uppercase tracking-widest">
               © {new Date().getFullYear()} Broadway. Wszelkie prawa zastrzeżone.
