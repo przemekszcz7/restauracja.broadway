@@ -79,7 +79,7 @@ export default function App() {
           <motion.div 
             initial={{ opacity: 0, letterSpacing: "0.2em" }}
             animate={{ opacity: 1, letterSpacing: "0.5em" }}
-            className="font-serif text-2xl md:text-3xl font-light italic text-gold cursor-pointer uppercase tracking-[0.5em] transition-all hover:text-gold-light"
+            className="font-serif text-xl md:text-3xl font-light italic text-gold cursor-pointer uppercase tracking-[0.2em] md:tracking-[0.5em] transition-all hover:text-gold-light"
           >
             Broadway
           </motion.div>
@@ -175,17 +175,17 @@ export default function App() {
             animate="visible"
             variants={containerVariants}
           >
-            <motion.div variants={itemVariants} className="flex items-center justify-center gap-6 mb-12">
-              <div className="h-[2px] w-12 bg-gradient-to-r from-transparent to-gold/40"></div>
-              <p className="font-display text-[10px] uppercase tracking-[0.8em] text-gold/50 font-medium">
+            <motion.div variants={itemVariants} className="flex items-center justify-center gap-4 md:gap-6 mb-8 md:mb-12">
+              <div className="h-[2px] w-8 md:w-12 bg-gradient-to-r from-transparent to-gold/40"></div>
+              <p className="font-display text-[8px] md:text-[10px] uppercase tracking-[0.4em] md:tracking-[0.8em] text-gold/50 font-medium whitespace-nowrap">
                 Restauracja.Broadway
               </p>
-              <div className="h-[2px] w-12 bg-gradient-to-l from-transparent to-gold/40"></div>
+              <div className="h-[2px] w-8 md:w-12 bg-gradient-to-l from-transparent to-gold/40"></div>
             </motion.div>
             
             <motion.h1 
               variants={itemVariants}
-              className="mb-8 font-serif text-[15vw] sm:text-[180px] leading-[0.7] italic text-gold-light drop-shadow-[0_0_60px_rgba(212,175,55,0.15)] mix-blend-screen select-none"
+              className="mb-6 md:mb-8 font-serif text-5xl sm:text-8xl lg:text-[180px] leading-[0.9] md:leading-[0.7] italic text-gold-light drop-shadow-[0_0_60px_rgba(212,175,55,0.15)] mix-blend-screen select-none px-4"
             >
               Broadway
             </motion.h1>
@@ -277,118 +277,8 @@ export default function App() {
         </div>
       </section>
 
-      {/* Opening Hours & Map Section */}
-      <section id="godziny" className="bg-[#020202] py-32 md:py-64 px-6 md:px-8 border-y border-gold/10 relative">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(139,0,0,0.03)_0%,transparent_80%)] pointer-events-none"></div>
-        <div className="absolute top-0 left-0 w-full h-[300px] bg-gradient-to-b from-gold/[0.03] to-transparent pointer-events-none"></div>
-        
-        <div className="mx-auto max-w-7xl relative z-10">
-          <div className="grid gap-24 md:gap-40 lg:grid-cols-2">
-            
-            {/* Hours */}
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={containerVariants}
-            >
-              <div className="flex flex-col items-center lg:items-start mb-16 md:mb-24">
-                <motion.h2 variants={itemVariants} className="theater-heading text-4xl sm:text-7xl mb-6">Zapraszamy</motion.h2>
-                <motion.div variants={itemVariants} className="h-1 w-24 bg-velvet/40"></motion.div>
-              </div>
-
-              <div className="space-y-0 group/hours">
-                {openingHours.map((item, idx) => (
-                  <motion.div 
-                    key={idx} 
-                    variants={itemVariants}
-                    className="flex flex-col sm:flex-row justify-between py-6 md:py-8 border-b border-white/5 transition-all duration-500 hover:pl-4 md:hover:pl-8 hover:border-gold/40 group/item relative overflow-hidden"
-                  >
-                    <div className="absolute left-0 top-0 w-1 h-full bg-gold scale-y-0 group-hover/item:scale-y-100 transition-transform origin-top duration-500"></div>
-                    <span className="font-display text-[10px] md:text-[12px] uppercase tracking-[0.2em] text-white/30 group-hover/item:text-gold transition-colors font-medium mb-1 sm:mb-0">{item.day}</span>
-                    <span className="font-serif italic text-lg md:text-2xl text-white/80 group-hover/item:text-white group-hover/item:tracking-wide transition-all">{item.hours}</span>
-                  </motion.div>
-                ))}
-              </div>
-              
-              <motion.div 
-                variants={itemVariants}
-                className="mt-20 md:mt-32 p-8 md:p-16 border border-gold/10 bg-white/[0.01] relative overflow-hidden group/quote shadow-2xl backdrop-blur-sm"
-              >
-                <div className="absolute inset-0 bg-gold/5 opacity-0 group-hover/quote:opacity-100 transition-opacity duration-1000"></div>
-                <div className="absolute top-0 left-0 w-[4px] h-full bg-gradient-to-b from-gold via-velvet to-gold scale-y-0 group-hover/quote:scale-y-100 transition-transform origin-top duration-700"></div>
-                
-                <p className="italic text-xl md:text-3xl text-white/95 mb-8 md:mb-12 font-serif leading-relaxed relative z-10 transition-all group-hover:translate-x-2">
-                  "Serdecznie polecam. Wszystkie zamówione dania były podane elegancko i smakowały nieziemsko. Klasa sama w sobie. Obsługa bardzo miła. Na pewno tu wrócę"
-                </p>
-                <div className="h-px w-24 md:w-32 bg-gold/30 mb-8 md:mb-10"></div>
-                <motion.a 
-                  whileHover={{ x: 15 }}
-                  href="https://www.facebook.com/profile.php?id=61562929442326&sk=reviews" 
-                  target="_blank" 
-                  rel="noreferrer"
-                  className="relative z-10 inline-flex items-center gap-4 md:gap-6 text-[10px] md:text-[11px] uppercase tracking-[0.4em] text-gold font-display transition-all hover:text-gold-light hover:tracking-[0.5em]"
-                >
-                  <Facebook size={14} strokeWidth={1} />
-                  Historie Gości
-                  <ChevronRight size={14} />
-                </motion.a>
-              </motion.div>
-            </motion.div>
-
-            {/* Location */}
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={containerVariants}
-              className="flex flex-col"
-            >
-              <div className="flex flex-col items-center lg:items-start mb-16 md:mb-24">
-                <motion.h2 variants={itemVariants} className="theater-heading text-4xl sm:text-7xl mb-6">Gdzie Jesteśmy</motion.h2>
-                <motion.div variants={itemVariants} className="h-1 w-24 bg-velvet/40"></motion.div>
-              </div>
-
-              <motion.div 
-                variants={itemVariants}
-                className="relative mb-16 md:mb-24 aspect-video w-full overflow-hidden bg-black shadow-xl ring-1 ring-gold/10"
-              >
-                <div className="absolute inset-0 pointer-events-none z-10 box-decoration-clone border-[10px] md:border-[20px] border-obsidian/60 transition-all group-hover:border-transparent"></div>
-                <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2549.90463070776!2d19.129831677022427!3d50.27503929997766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4716dabba54e23c5%3A0x4d53b137e6e4c37e!2sModrzejowska%2043%2C%2041-200%20Sosnowiec!5e0!3m2!1spl!2spl!4v1778240611068!5m2!1spl!2spl" 
-                  width="100%" 
-                  height="100%" 
-                  style={{ border: 0 }} 
-                  allowFullScreen 
-                  loading="lazy" 
-                  referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
-              </motion.div>
-              
-              <div className="space-y-12 md:space-y-16">
-                {[
-                  { icon: MapPin, label: "Adres", val: "Modrzejowska 43, Sosnowiec 41-200" },
-                  { icon: Phone, label: "Kontakt", val: "786 477 235" },
-                  { icon: Mail, label: "E-mail", val: "broadwaylokal@gmail.com" }
-                ].map((item, idx) => (
-                  <motion.div key={idx} variants={itemVariants} className="flex items-start gap-6 md:gap-10 group">
-                    <div className="mt-1 p-3 md:p-4 rounded-full border border-gold/10 group-hover:border-gold/60 transition-all duration-700 bg-gold/[0.03] group-hover:bg-gold/10 shadow-[0_0_20px_rgba(212,175,55,0)] group-hover:shadow-[0_0_30px_rgba(212,175,55,0.2)]">
-                      <item.icon className="text-gold" size={24} md:size={28} strokeWidth={1} />
-                    </div>
-                    <div>
-                      <p className="font-display text-[9px] md:text-[10px] uppercase tracking-[0.4em] md:tracking-[0.5em] text-white/30 mb-2 md:mb-4 block font-medium group-hover:text-gold transition-colors">{item.label}</p>
-                      <p className="text-xl md:text-3xl font-serif italic text-white/95 group-hover:text-gold-light transition-all duration-700 group-hover:translate-x-2">{item.val}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
       {/* Socials & Reels */}
-      <section id="social" className="py-32 md:py-64 px-6 md:px-8 bg-obsidian relative">
+      <section id="galeria" className="py-32 md:py-64 px-6 md:px-8 bg-obsidian relative">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-4/5 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent opacity-50"></div>
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4/5 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent opacity-50"></div>
         
@@ -473,6 +363,117 @@ export default function App() {
               </motion.a>
             ))}
           </motion.div>
+        </div>
+      </section>
+
+      {/* Opening Hours & Map Section */}
+      <section id="godziny" className="bg-[#020202] py-32 md:py-64 px-6 md:px-8 border-y border-gold/10 relative">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(139,0,0,0.03)_0%,transparent_80%)] pointer-events-none"></div>
+        <div className="absolute top-0 left-0 w-full h-[300px] bg-gradient-to-b from-gold/[0.03] to-transparent pointer-events-none"></div>
+        
+        <div className="mx-auto max-w-7xl relative z-10">
+          <div className="grid gap-24 md:gap-40 lg:grid-cols-2">
+            
+            {/* Hours */}
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={containerVariants}
+            >
+              <div className="flex flex-col items-center lg:items-start mb-16 md:mb-24">
+                <motion.h2 variants={itemVariants} className="theater-heading text-4xl sm:text-7xl mb-6">Zapraszamy</motion.h2>
+                <motion.div variants={itemVariants} className="h-1 w-24 bg-velvet/40"></motion.div>
+              </div>
+
+              <div className="space-y-0 group/hours">
+                {openingHours.map((item, idx) => (
+                  <motion.div 
+                    key={idx} 
+                    variants={itemVariants}
+                    className="flex flex-col sm:flex-row justify-between py-6 md:py-8 border-b border-white/5 transition-all duration-500 hover:pl-4 md:hover:pl-8 hover:border-gold/40 group/item relative overflow-hidden"
+                  >
+                    <div className="absolute left-0 top-0 w-1 h-full bg-gold scale-y-0 group-hover/item:scale-y-100 transition-transform origin-top duration-500"></div>
+                    <span className="font-display text-[10px] md:text-[12px] uppercase tracking-[0.2em] text-white/30 group-hover/item:text-gold transition-colors font-medium mb-1 sm:mb-0">{item.day}</span>
+                    <span className="font-serif italic text-lg md:text-2xl text-white/80 group-hover/item:text-white group-hover/item:tracking-wide transition-all">{item.hours}</span>
+                  </motion.div>
+                ))}
+              </div>
+              
+              <motion.div 
+                variants={itemVariants}
+                className="mt-20 md:mt-32 p-8 md:p-16 border border-gold/10 bg-white/[0.01] relative overflow-hidden group/quote shadow-2xl backdrop-blur-sm"
+              >
+                <div className="absolute inset-0 bg-gold/5 opacity-0 group-hover/quote:opacity-100 transition-opacity duration-1000"></div>
+                <div className="absolute top-0 left-0 w-[4px] h-full bg-gradient-to-b from-gold via-velvet to-gold scale-y-0 group-hover/quote:scale-y-100 transition-transform origin-top duration-700"></div>
+                
+                <p className="italic text-xl md:text-3xl text-white/95 mb-8 md:mb-12 font-serif leading-relaxed relative z-10 transition-all group-hover:translate-x-2">
+                  "Serdecznie polecam. Wszystkie zamówione dania były podane elegancko i smakowały nieziemsko. Klasa sama w sobie. Obsługa bardzo miła. Na pewno tu wrócę"
+                </p>
+                <div className="h-px w-24 md:w-32 bg-gold/30 mb-8 md:mb-10"></div>
+                <motion.a 
+                  whileHover={{ x: 15 }}
+                  href="https://www.facebook.com/profile.php?id=61562929442326&sk=reviews" 
+                  target="_blank" 
+                  rel="noreferrer"
+                  className="relative z-10 inline-flex items-center gap-4 md:gap-6 text-[10px] md:text-[11px] uppercase tracking-[0.4em] text-gold font-display transition-all hover:text-gold-light hover:tracking-[0.5em]"
+                >
+                  <Facebook size={14} strokeWidth={1} />
+                  Historie Gości
+                  <ChevronRight size={14} />
+                </motion.a>
+              </motion.div>
+            </motion.div>
+
+            {/* Location */}
+            <motion.div
+              id="kontakt"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={containerVariants}
+              className="flex flex-col"
+            >
+              <div className="flex flex-col items-center lg:items-start mb-16 md:mb-24">
+                <motion.h2 variants={itemVariants} className="theater-heading text-4xl sm:text-7xl mb-6">Gdzie Jesteśmy</motion.h2>
+                <motion.div variants={itemVariants} className="h-1 w-24 bg-velvet/40"></motion.div>
+              </div>
+
+              <motion.div 
+                variants={itemVariants}
+                className="relative mb-16 md:mb-24 aspect-video w-full overflow-hidden bg-black shadow-xl ring-1 ring-gold/10"
+              >
+                <div className="absolute inset-0 pointer-events-none z-10 box-decoration-clone border-[10px] md:border-[20px] border-obsidian/60 transition-all group-hover:border-transparent"></div>
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2549.90463070776!2d19.129831677022427!3d50.27503929997766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4716dabba54e23c5%3A0x4d53b137e6e4c37e!2sModrzejowska%2043%2C%2041-200%20Sosnowiec!5e0!3m2!1spl!2spl!4v1778240611068!5m2!1spl!2spl" 
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0 }} 
+                  allowFullScreen 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </motion.div>
+              
+              <div className="space-y-12 md:space-y-16">
+                {[
+                  { icon: MapPin, label: "Adres", val: "Modrzejowska 43, Sosnowiec 41-200" },
+                  { icon: Phone, label: "Kontakt", val: "786 477 235" },
+                  { icon: Mail, label: "E-mail", val: "broadwaylokal@gmail.com" }
+                ].map((item, idx) => (
+                  <motion.div key={idx} variants={itemVariants} className="flex items-start gap-6 md:gap-10 group">
+                    <div className="mt-1 p-3 md:p-4 rounded-full border border-gold/10 group-hover:border-gold/60 transition-all duration-700 bg-gold/[0.03] group-hover:bg-gold/10 shadow-[0_0_20px_rgba(212,175,55,0)] group-hover:shadow-[0_0_30px_rgba(212,175,55,0.2)]">
+                      <item.icon className="text-gold" size={24} md:size={28} strokeWidth={1} />
+                    </div>
+                    <div>
+                      <p className="font-display text-[9px] md:text-[10px] uppercase tracking-[0.4em] md:tracking-[0.5em] text-white/30 mb-2 md:mb-4 block font-medium group-hover:text-gold transition-colors">{item.label}</p>
+                      <p className="text-xl md:text-3xl font-serif italic text-white/95 group-hover:text-gold-light transition-all duration-700 group-hover:translate-x-2">{item.val}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
